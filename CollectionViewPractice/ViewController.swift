@@ -20,12 +20,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // UICollectionViewDelegateFlowLayout 프로토콜은 UICollectionViewDelegate 프로토콜을 상속받음.
         emojiCollectionView.delegate = self
         emojiCollectionView.dataSource = self
+        emojiCollectionView.isPagingEnabled = true
+        
         // 스토리보드에서 컬렉션 뷰 레이아웃 쓸 거면, 이런 게 필요가 없다고!! (추정)
         emojiCollectionView.collectionViewLayout = flowLayout
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = .zero
         
-        let size = (view.bounds.size.width / 4 - 20)
-        flowLayout.scrollDirection = .vertical
-        flowLayout.itemSize = CGSize(width: size, height: size)
+        flowLayout.itemSize = CGSize(width: view.bounds.size.width, height: emojiCollectionView.bounds.size.height)
     }
     
     // 이 메서드를 통해 section 개수를 바꿔줄 수 있다. 안 바꾸면 1 임
@@ -43,7 +45,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = emojiCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
         
         cell.emojiLabel.text = emojies[indexPath.item]
-        cell.layer.cornerRadius = 8
+        cell.layer.cornerRadius = 20
         cell.backgroundColor = .systemYellow
         
         return cell
