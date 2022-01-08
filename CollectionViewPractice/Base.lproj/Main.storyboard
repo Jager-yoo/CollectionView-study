@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,22 +33,22 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCollectionViewCell" id="4Ff-Cr-zry" customClass="MyCollectionViewCell" customModule="CollectionViewPractice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WaJ-DZ-5rG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBj-QC-0ey">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBj-QC-0ey">
                                                     <rect key="frame" x="170.5" y="51.5" width="73.5" height="37"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="qBj-QC-0ey" firstAttribute="centerX" secondItem="4Ff-Cr-zry" secondAttribute="centerX" id="Dh8-z9-Dd4"/>
-                                            <constraint firstItem="qBj-QC-0ey" firstAttribute="centerY" secondItem="4Ff-Cr-zry" secondAttribute="centerY" id="Zyp-QQ-PLy"/>
-                                        </constraints>
+                                            <constraints>
+                                                <constraint firstItem="qBj-QC-0ey" firstAttribute="centerX" secondItem="WaJ-DZ-5rG" secondAttribute="centerX" id="Dh8-z9-Dd4"/>
+                                                <constraint firstItem="qBj-QC-0ey" firstAttribute="centerY" secondItem="WaJ-DZ-5rG" secondAttribute="centerY" id="Zyp-QQ-PLy"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="140"/>
                                         <connections>
                                             <outlet property="emojiLabel" destination="qBj-QC-0ey" id="2ch-Dx-GZj"/>
